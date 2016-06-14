@@ -5,7 +5,7 @@
 int main()
 {
    unsigned char N;
-   unsigned char *myA;
+   char *myA;
 
    myA = mkarr(&N);
    getmid(N, myA);

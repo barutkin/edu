@@ -1,62 +1,87 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-unsigned char getmid(unsigned char N, unsigned char *A)
+unsigned char getmid(unsigned char N, char *A)
 {
    int sumL;
-   int sumR;
    unsigned char i;
+   unsigned char midi;
+   int sumR;
    unsigned char j;
-   unsigned char mid;
+   unsigned char midj;
 
-   printf("Имеем массив [%hhu]:\n", N);
+   printf("| ");
    for (i = 0; i < N; i++)
    {
-      printf("%hhu ", A[i]);
+      printf("%hhi ", A[i]);
    }
-   printf("\n");
-   printf("Разделим массив на две части с минимальной разностью сумм элементов:\n");
+   printf("|\n");
+   printf("Разделим массив на две части с минимальным модулем разности сумм элементов обоих частей:\n");
 
-   sumL = 0;
-   sumR = 0;
-   i = 0;
-   j = N - 1;
+   sumL = A[0];
+   sumR = A[N - 1];
+   i = 1;
+   j = N - 2;
+   midi = i - 1;
+   midj = j + 1;
    do
    {
-      if (sumL > sumR)
+      unsigned char k;
+      for (k = 0; k <= midi; k++)
       {
-         sumR += A[j];
-         j--;
+         printf("%hhi ", A[k]);
       }
-      if (sumL < sumR)
+      printf("| ");
+      for (k = midi + 1; k < midj; k++)
       {
-         sumL += A[i];
-         mid = i;
-         i++;
+         printf("%hhi ", A[k]);
       }
-      if (sumL == sumR)
+      printf("| ");
+      for (k = midj; k < N; k++)
       {
-         sumL += A[i];
-         sumR += A[j];
-         mid = i;
-         i++;
-         j--;
+         printf("%hhi ", A[k]);
       }
-   }
-   while (i < j);
+      printf("\n");
 
-   for (i = 0; i <= mid; i++)
-   {
-      printf("%hhu ", A[i]);
+      int absDiffLRi;
+      int absDiffLRj;
+      absDiffLRi = abs(sumL + A[i] - sumR);
+      absDiffLRj = abs(sumL - (sumR + A[j]));
+      if (absDiffLRi > absDiffLRj)
+      {
+         sumR += A[j];
+         midj--;
+         j--;
+      }
+      if (absDiffLRi < absDiffLRj)
+      {
+         sumL += A[i];
+         midi++;
+         i++;
+      }
+      if (absDiffLRi == absDiffLRj)
+      {
+         sumL += A[i];
+         sumR += A[j];
+         midi++;
+         midj--;
+         i++;
+         j--;
+      }
    }
-   printf("\t|\t");
-   for (i = mid + 1; i < N; i++)
+   while (i <= j);
+   for (i = 0; i <= midi; i++)
    {
-      printf("%hhu ", A[i]);
+      printf("%hhi ", A[i]);
    }
-   printf("\n");
-   printf("\t%d\t|\t%d\n", sumL, sumR);
-   printf("Номер граничащего слева элемента (начиная с 0): %hhu\n", mid);
+   printf("| | ");
+   for (i = midi + 1; i < N; i++)
+   {
+      printf("%hhi ", A[i]);
+   }
+   printf("\n\t%d\t||\t%d\n", sumL, sumR);
+   printf("Номер граничащего слева элемента (начиная с 0): %hhu\n", midi);
    
-   return mid;
+   return midi;
 
 }

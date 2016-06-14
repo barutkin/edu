@@ -5,4 +5,4 @@
   И число элементов массива, и значения элементов массива
   находятся в пределах unsigned char
 */
-unsigned char *mkarr(unsigned char *);
+char *mkarr(unsigned char *);
