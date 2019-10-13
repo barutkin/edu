@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 22:24:15 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/02 10:00:17 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/12 10:52:51 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if ((str = ft_strnew(len)))
-		return (ft_strncpy(str, (s + (char)start), len));
+		return (ft_strncpy(str, (s + start), len));
 	else
 		return (NULL);
 }
