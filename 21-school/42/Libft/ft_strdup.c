@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 16:50:02 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/08 21:19:29 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/14 16:23:26 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strdup(const char *s1)
 
 	s1len = s1 ? ft_strlen(s1) : 0;
 	if ((str = ft_strnew(s1len)))
-		return (ft_strncpy(str, s1, s1len + 1));
+		return (ft_strncpy(str, s1, s1len));
 	else
 		return (NULL);
 }
