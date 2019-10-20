@@ -6,12 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:47:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 21:31:15 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:47:45 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/tetraminos.h"
-#include <stdio.h>
 
 int			check_tetraminos(char **lines, int len)
 {
@@ -92,7 +91,7 @@ int			validate(const int fd)
 		ft_arraydel(lines, len);
 		return (VALID);
 	}
-	//ft_arraydel(lines, len);
+	ft_arraydel(lines, len);
 	if (!len && fd > 0)
 		ft_strdel(&line);
 	return (INVALID);

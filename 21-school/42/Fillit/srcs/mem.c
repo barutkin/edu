@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:56:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 21:29:49 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/20 22:06:07 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,12 @@ void		ft_arraydel(char **lines, int len)
 {
 	int		i;
 
-	i = 0;
 	if (!lines || !*lines)
 		return ;
+	i = 0;
 	while (i < len)
-	{
-		if (lines[i])
-			ft_strdel(&lines[i]);
-		i++;
-	}
-	//free(lines);
+		ft_strdel(&lines[i++]);
+	free(lines);
 	lines = NULL;
 }
 
