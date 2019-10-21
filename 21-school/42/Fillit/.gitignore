@@ -1,0 +1,17 @@
+*
+!.gitignore
+!author
+!Makefile
+!fillit.en.pdf
+!tetraminos
+!includes
+!includes/fillit.h
+!includes/tetraminos.h
+!srcs
+!srcs/*.c
+!srcs/libft
+!srcs/libft/Makefile
+!srcs/libft/*.c
+!srcs/libft/libft.h
+!test
+!test/*
