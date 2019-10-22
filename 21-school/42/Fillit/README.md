@@ -4,4 +4,4 @@ Fillit is not about recoding Tetris, even if it’s still a variant of this game
 Obviously, the main goal is to find the smallest square in the minimal amount of time, despite an exponentially growing number of possibilities each time a piece is added.
 
 ![Tetriminos](./fillit.svg)
-<img src="./fillit.svg">
+> <img src="./fillit.svg">

@@ -16,3 +16,4 @@
 !srcs/libft/libft.h
 !test
 !test/*
+!README.md
