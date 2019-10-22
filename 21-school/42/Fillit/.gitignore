@@ -3,10 +3,11 @@
 !author
 !Makefile
 !fillit.en.pdf
-!tetraminos
+!fillit.svg
+!tetriminos
 !includes
 !includes/fillit.h
-!includes/tetraminos.h
+!includes/tetriminos.h
 !srcs
 !srcs/*.c
 !srcs/libft

@@ -6,13 +6,13 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:21:25 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:07:46 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:57:44 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <fillit.h>
-#include <tetraminos.h>
+#include <tetriminos.h>
 
 int		main(int argc, char **argv)
 {

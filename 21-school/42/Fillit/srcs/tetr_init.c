@@ -6,11 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:59:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:42:51 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:58:38 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <tetraminos.h>
+#include <tetriminos.h>
 
 char		*chrjoin(char name, char symbol, char side)
 {
@@ -30,7 +30,7 @@ void		create_ts(void)
 	if (!(g_cur_tetr = (char **)malloc(sizeof(char *) * TETR_MAXIN)))
 		clear_ts();
 	g_cur_tetr_len = 0;
-	if (!(g_tetr = (t_tetramino *)malloc(sizeof(t_tetramino) * TETR_COUNT)))
+	if (!(g_tetr = (t_tetrimino *)malloc(sizeof(t_tetrimino) * TETR_COUNT)))
 		clear_ts();
 	g_s.symbol = 'S';
 	g_s.array = NULL;

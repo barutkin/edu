@@ -6,12 +6,12 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:29:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:19:35 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:58:29 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
-#include <tetraminos.h>
+#include <tetriminos.h>
 
 void		get_offset(char **lines, int *x_offset, int *y_offset)
 {

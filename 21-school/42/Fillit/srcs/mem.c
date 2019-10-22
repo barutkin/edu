@@ -6,12 +6,12 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:56:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:41:39 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:58:16 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
-#include <tetraminos.h>
+#include <tetriminos.h>
 
 char		**tsmalloc(void)
 {

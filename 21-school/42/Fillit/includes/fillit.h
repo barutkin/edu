@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:53:47 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:09:53 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:55:56 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 # define VALID			1
 # define INVALID		0
 
-typedef struct		s_tetramino
+typedef struct		s_tetrimino
 {
 	char			**array;
 	char			symbol;
-}					t_tetramino;
+}					t_tetrimino;
 
 char				**g_b;
 int					g_bs;

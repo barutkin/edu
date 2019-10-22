@@ -6,11 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:45:03 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:20:06 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:58:48 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <tetraminos.h>
+#include <tetriminos.h>
 
 int		get_board_size(int n)
 {

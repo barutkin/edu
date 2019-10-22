@@ -6,13 +6,13 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:47:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 15:01:31 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:59:29 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <tetraminos.h>
+#include <tetriminos.h>
 
-int			check_tetraminos(char **lines, int len)
+int			check_tetriminos(char **lines, int len)
 {
 	char	***tetr;
 	char	name;
@@ -90,7 +90,7 @@ int			validate(const int fd)
 		clear_ts();
 	ft_strdel(&line);
 	lines[len] = 0;
-	if (err[1] && check_lines(lines, len) && check_tetraminos(lines, len))
+	if (err[1] && check_lines(lines, len) && check_tetriminos(lines, len))
 	{
 		ft_arraydel(lines, len);
 		return (VALID);
