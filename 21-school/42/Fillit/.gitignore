@@ -3,7 +3,6 @@
 !author
 !Makefile
 !fillit.en.pdf
-!fillit.svg
 !tetriminos
 !includes
 !includes/fillit.h
@@ -17,3 +16,5 @@
 !test
 !test/*
 !README.md
+!fillit.svg
+!moulinette.png
