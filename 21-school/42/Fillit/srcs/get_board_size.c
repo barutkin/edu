@@ -6,9 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:45:03 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 20:45:12 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:20:06 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <tetraminos.h>
 
 int		get_board_size(int n)
 {
@@ -17,7 +19,7 @@ int		get_board_size(int n)
 	i = 0;
 	if (n <= 0)
 		return (0);
-	n = n * 4;
+	n *= TETR_SIZE;
 	while (i * i < n)
 		i++;
 	return (i);

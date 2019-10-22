@@ -6,11 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:45:57 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 20:45:59 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:16:28 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include <fillit.h>
 
 static int	handle_1(char *block)
 {

@@ -6,11 +6,11 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:46:10 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 20:46:12 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:17:13 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include <fillit.h>
 
 int		handle_o(char *block)
 {

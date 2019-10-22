@@ -6,11 +6,12 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:29:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 19:00:28 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:19:35 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include <fillit.h>
+#include <tetraminos.h>
 
 void		get_offset(char **lines, int *x_offset, int *y_offset)
 {
@@ -18,12 +19,12 @@ void		get_offset(char **lines, int *x_offset, int *y_offset)
 	int		j;
 
 	i = 0;
-	*x_offset = 4;
-	*y_offset = 4;
-	while (i < 4)
+	*x_offset = TETR_SIZE;
+	*y_offset = TETR_SIZE;
+	while (i < TETR_SIZE)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < TETR_SIZE)
 		{
 			if (lines[i][j] == '#' && i < *x_offset)
 				*x_offset = i;
@@ -44,10 +45,10 @@ char		**move_to_topleft(char **lines)
 
 	i = 0;
 	get_offset(lines, &x_offset, &y_offset);
-	while (i < 4)
+	while (i < TETR_SIZE)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < TETR_SIZE)
 		{
 			if (lines[i][j] == '#')
 			{
@@ -63,23 +64,23 @@ char		**move_to_topleft(char **lines)
 
 char		**rotate(char **block)
 {
-	char	tmp[4][4];
+	char	tmp[TETR_SIZE][TETR_SIZE];
 	int		i;
 	int		j;
 
 	i = 0;
-	while (i < 4)
+	while (i < TETR_SIZE)
 	{
 		j = 0;
-		while (j++ < 4)
-			tmp[i][j - 1] = block[4 - (j - 1) - 1][i];
+		while (j++ < TETR_SIZE)
+			tmp[i][j - 1] = block[TETR_SIZE - (j - 1) - 1][i];
 		i++;
 	}
 	i = 0;
-	while (i < 4)
+	while (i < TETR_SIZE)
 	{
 		j = 0;
-		while (j++ < 4)
+		while (j++ < TETR_SIZE)
 			block[i][j - 1] = tmp[i][j - 1];
 		i++;
 	}
@@ -94,17 +95,19 @@ char		***split_tetr(char **lines, int len)
 	int		j;
 	int		k;
 
-	if (!(tetr = (char ***)malloc(sizeof(char **) * ((len / 5) + 1))))
+	if (!(tetr = (char ***)malloc(sizeof(char **) * ((len / TETR_AREA) + 1))))
+	{
 		clear_ts();
+	}
 	i = 0;
 	k = 0;
-	while (i <= len / 5)
+	while (i <= len / TETR_AREA)
 	{
 		j = 0;
-		if (!(tetr[i] = (char **)malloc(sizeof(char *) * 4)))
+		if (!(tetr[i] = (char **)malloc(sizeof(char *) * TETR_SIZE)))
 			clear_ts();
-		while (j < 4)
-			tetr[i][j++] = lines[k++];
+		while (j < TETR_SIZE)
+			tetr[i][j++] = ft_strdup(lines[k++]);
 		k++;
 		i++;
 	}
@@ -119,8 +122,8 @@ int			arraycmp(char **a, char **b, int side)
 	i = 0;
 	if (side == 0)
 		move_to_topleft(a);
-	if (side < 4)
-		while (i < 4 && (o = ft_strequ(a[i], b[i])))
+	if (side < TETR_SIZE)
+		while (i < TETR_SIZE && (o = ft_strequ(a[i], b[i])))
 			i++;
 	else
 		return (INVALID);

@@ -6,12 +6,12 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:10:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 20:20:37 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:02:08 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
-#include "../includes/tetraminos.h"
+#include <fillit.h>
+#include <tetraminos.h>
 
 static int	g_tetrs_len = 0;
 

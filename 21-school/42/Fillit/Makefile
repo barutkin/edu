@@ -6,7 +6,7 @@
 #    By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/21 21:58:57 by rjeraldi          #+#    #+#              #
-#    Updated: 2019/10/20 20:56:44 by rjeraldi         ###   ########.fr        #
+#    Updated: 2019/10/22 15:07:28 by rjeraldi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C $(LIBDIR)
-	$(CC) $(CCFLAGS) -L $(LIBDIR) -l$(LIB) -o $(NAME) $^
+	$(CC) $(CCFLAGS) -I $(DEPSDIR) -I $(LIBDIR) -L $(LIBDIR) -l$(LIB) -o $(NAME) $^
 
 $(OBJ): %.o : $(SRCDIR)/%.c $(DEPSDIR)/$(DEPS)
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	$(CC) $(CCFLAGS) -I $(DEPSDIR) -I $(LIBDIR) -c -o $@ $<
 
 $(SRCDIR)/$(SRC):
 

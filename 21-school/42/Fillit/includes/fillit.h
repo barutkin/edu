@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:53:47 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 20:54:19 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:09:53 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "../srcs/libft/libft.h"
+# include <libft.h>
 
-# define SIZE		(TETR_MAX * 4) + 1
-# define VALID		1
-# define INVALID	0
+# define VALID			1
+# define INVALID		0
 
 typedef struct		s_tetramino
 {

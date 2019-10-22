@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:09:57 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/20 19:50:01 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 01:06:58 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,19 @@
 
 # include "fillit.h"
 
-# define TETR_COUNT	7
-# define TETR_MAX	26
+# define TETR_COUNT		7
+# define TETR_MAXIN		26
+# define TETR_SIZE		4
+# define EMPTY_LINES	1
+# define TETR_AREA		(TETR_SIZE + EMPTY_LINES)
+# define BOARD_MAXSIZE	((TETR_MAXIN * TETR_AREA) + 1)
+# define TETR_MASK_S	".##.##.........."
+# define TETR_MASK_Z	"##...##........."
+# define TETR_MASK_T	".#..###........."
+# define TETR_MASK_I	"#...#...#...#..."
+# define TETR_MASK_O	"##..##.........."
+# define TETR_MASK_L	"#...#...##......"
+# define TETR_MASK_J	".#...#..##......"
 
 t_tetramino			*g_tetr;
 char				**g_cur_tetr;
