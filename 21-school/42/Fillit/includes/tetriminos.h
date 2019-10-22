@@ -6,21 +6,21 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:09:57 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 18:00:53 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:02:43 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TETRIMINOS_H
 # define TETRIMINOS_H
 
-# include "fillit.h"
+# include <fillit.h>
 
 # define TETR_COUNT		7
 # define TETR_MAXIN		26
 # define TETR_SIZE		4
 # define EMPTY_LINES	1
 # define TETR_AREA		(TETR_SIZE + EMPTY_LINES)
-# define BOARD_MAXSIZE	((TETR_MAXIN * TETR_AREA) + 1)
+# define BOARD_MAXSIZE	((TETR_MAXIN * TETR_AREA))
 # define TETR_MASK_S	".##.##.........."
 # define TETR_MASK_Z	"##...##........."
 # define TETR_MASK_T	".#..###........."
@@ -43,7 +43,7 @@ t_tetrimino			g_j;
 void				set_board(int k);
 void				create_ts();
 void				create_tsarray(void);
-void				clear_ts();
+void				clear_ts(const int);
 int					clear_tetr(char ***tetr, int len, int cur_size);
 char				***split_tetr(char **lines, int len);
 void				print();

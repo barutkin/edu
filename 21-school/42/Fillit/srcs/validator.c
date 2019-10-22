@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 20:47:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 17:59:29 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:01:01 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ int			validate(const int fd)
 	int		err[2];
 
 	if (!(lines = (char **)malloc(sizeof(char *) * BOARD_MAXSIZE)))
-		clear_ts();
+		clear_ts(INVALID);
 	err[1] = 0;
 	len = 0;
 	while ((err[0] = get_next_line(fd, &line)) > 0 &&
-			(err[1] = check_line(line)))
+			(err[1] = check_line(line)) && len < BOARD_MAXSIZE)
 		lines[len++] = line;
-	if (err[0] == -1)
-		clear_ts();
+	if (err[0] == -1 || len >= BOARD_MAXSIZE)
+		clear_ts(INVALID);
 	ft_strdel(&line);
 	lines[len] = 0;
 	if (err[1] && check_lines(lines, len) && check_tetriminos(lines, len))

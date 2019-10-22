@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:29:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 17:58:29 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:46:24 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,16 +96,14 @@ char		***split_tetr(char **lines, int len)
 	int		k;
 
 	if (!(tetr = (char ***)malloc(sizeof(char **) * ((len / TETR_AREA) + 1))))
-	{
-		clear_ts();
-	}
+		clear_ts(INVALID);
 	i = 0;
 	k = 0;
 	while (i <= len / TETR_AREA)
 	{
 		j = 0;
 		if (!(tetr[i] = (char **)malloc(sizeof(char *) * TETR_SIZE)))
-			clear_ts();
+			clear_ts(INVALID);
 		while (j < TETR_SIZE)
 			tetr[i][j++] = ft_strdup(lines[k++]);
 		k++;

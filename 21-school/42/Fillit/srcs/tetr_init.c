@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:59:09 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 17:58:38 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:48:04 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*chrjoin(char name, char symbol, char side)
 	char	*a;
 
 	if (!(a = (char *)malloc(TETR_SIZE)))
-		clear_ts();
+		clear_ts(INVALID);
 	a[0] = name;
 	a[1] = symbol;
 	a[2] = side;
@@ -28,10 +28,10 @@ char		*chrjoin(char name, char symbol, char side)
 void		create_ts(void)
 {
 	if (!(g_cur_tetr = (char **)malloc(sizeof(char *) * TETR_MAXIN)))
-		clear_ts();
+		clear_ts(INVALID);
 	g_cur_tetr_len = 0;
 	if (!(g_tetr = (t_tetrimino *)malloc(sizeof(t_tetrimino) * TETR_COUNT)))
-		clear_ts();
+		clear_ts(INVALID);
 	g_s.symbol = 'S';
 	g_s.array = NULL;
 	g_z.symbol = 'Z';
@@ -92,14 +92,14 @@ void		set_board(int k)
 	if (g_cur_tetr_len > 0)
 	{
 		if (!(line = ft_strnew(TETR_MAXIN)))
-			clear_ts();
+			clear_ts(INVALID);
 		n = get_board_size(g_cur_tetr_len) + k;
 		while (i++ < n)
 			ft_strcat(line, ".");
 		if (!(g_b = malloc(sizeof(char *) * n)))
 		{
 			ft_strdel(&line);
-			clear_ts();
+			clear_ts(INVALID);
 		}
 		g_bs = n;
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:56:44 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 17:58:16 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:01:04 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char		**tsmalloc(void)
 	if (!(p = (char **)malloc(sizeof(char *) * TETR_SIZE)))
 	{
 		ft_putendl("tsmalloc error");
-		clear_ts();
+		clear_ts(VALID);
 	}
 	return (p);
 }
@@ -39,7 +39,7 @@ void		ft_arraydel(char **lines, int len)
 	lines = NULL;
 }
 
-void		clear_ts(void)
+void		clear_ts(const int is_valid)
 {
 	if (g_s.array)
 		ft_arraydel(g_s.array, TETR_SIZE);
@@ -59,6 +59,8 @@ void		clear_ts(void)
 	ft_arraydel(g_b, g_bs);
 	if (g_tetr)
 		free(g_tetr);
+	if (!is_valid)
+		ft_putendl("error");
 	exit(1);
 }
 

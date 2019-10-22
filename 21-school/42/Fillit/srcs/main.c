@@ -6,7 +6,7 @@
 /*   By: rjeraldi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:21:25 by rjeraldi          #+#    #+#             */
-/*   Updated: 2019/10/22 17:57:44 by rjeraldi         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:03:58 by rjeraldi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int		main(int argc, char **argv)
 		ft_putendl("error");
 	if (fd > 0)
 		close(fd);
-	clear_ts();
+	clear_ts(VALID);
 	return (0);
 }
