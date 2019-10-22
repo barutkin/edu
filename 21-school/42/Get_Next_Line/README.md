@@ -6,4 +6,6 @@ The aim of this project is to make you code a function that returns a line endin
 
 Based on arrays.
 
+Remember to free(line) when get_next_line returns 0.
+
 <img src="./moulinette.png" align="center">
