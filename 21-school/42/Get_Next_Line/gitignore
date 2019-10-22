@@ -1,8 +1,0 @@
-*
-!author
-!get_next_line.c
-!get_next_line.h
-!libft
-!libft/Makefile
-!libft/libft.h
-!libft/*.c
