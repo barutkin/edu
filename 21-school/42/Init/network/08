@@ -1,0 +1,4 @@
+Amazon Technologies Inc.
+Amazon.com, Inc.
+
+#whois `./07 | grep -A 1 Name | head -2 | grep Address | awk '{print $2}'` | grep -v -E '^#' | grep -v -E '^$'

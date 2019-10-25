@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ "$#" -ne 1 ]]; then
+	echo "Usage: ./02 active_user"
+	echo "Active users:"
+	echo "`who | awk '{print $1}'`"
+	exit
+fi
+	
+if [[ -n `grep "$1" /etc/passwd` ]]; then
+	if [[ -n `pgrep -u $1` ]]; then
+		kill -9 $(pgrep -u $1)
+		/sbin/userdel -r $1
+	else
+		echo "Error: $1 is not active user"
+		exit
+	fi
+
+else
+	echo "Error: $1 is not valid user"
+	exit
+fi

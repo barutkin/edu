@@ -1,0 +1,4 @@
+163.172.250.12
+163.172.250.13
+
+#nslookup 42.fr | grep -A 10 'Non-authoritative answer:' | grep Address | awk '{print $2}'

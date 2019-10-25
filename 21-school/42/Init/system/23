@@ -1,0 +1,2 @@
+#Graphic way. On VM enter login/password in Display Manager
+#SSH way: ssh -p 42022 rjeraldi@127.0.0.1
