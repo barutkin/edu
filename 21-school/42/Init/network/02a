@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ifconfig -L en0 | grep 'broadcast' | awk '{print $6}'

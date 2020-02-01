@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rsync -avP -e 'ssh -p 6522' --delete-after $HOME/ barutkin@109.202.17.2:tmp/backup/ >> $HOME/backup.log 2>&1

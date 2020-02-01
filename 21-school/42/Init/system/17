@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ssh -p 42022 rjeraldi@127.0.0.1
